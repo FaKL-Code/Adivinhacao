@@ -5,7 +5,17 @@ print("-----------------------------")
 
 numero = randint(0, 100)
 
-tentativas = 5
+print("Qual o nível de dificuldade?")
+print("1- Fácil  2- Médio  3- Difícil")
+
+dificuldade = int(input(""))
+
+if dificuldade == 1:
+    tentativas = 10
+elif dificuldade == 2:
+    tentativas = 7
+elif dificuldade == 3:
+    tentativas = 5
 
 rodada = 1
 
