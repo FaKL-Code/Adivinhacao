@@ -1,17 +1,30 @@
 from random import randint
 
-print("Este e um jogo de adivinhacao")
+print("Este é um jogo de adivinhação")
 print("-----------------------------")
 
 numero = randint(0, 100)
 
-valor_inserido = int(input("Digite o numero: "))
+valor_inserido = int(input("Digite o número: "))
 
-print("Voce digitou: ", valor_inserido)
+acertou = valor_inserido == numero
 
-if(valor_inserido == numero):
-    print("Voce acertou")
+maior = valor_inserido > numero
+
+menor = valor_inserido < numero
+
+print("Você digitou: ", valor_inserido)
+
+if acertou:
+    print("Você acertou")
 else:
-    print("Voce errou")
     
-print("O numero era: ", numero)
+    if maior:
+        print("O número é menor que isso")
+    
+    elif menor:
+        print("O número é maior")
+    
+    print("Você errou")
+    
+print("O número era: ", numero)
