@@ -18,13 +18,9 @@ def start():
         print("Jogando!")
         
         palpite = str(input("Escolha uma letra: ")).upper()
-        pos = 0
         
         if(palpite in palavra):
-            for letra in palavra:
-                if(palpite == letra):
-                    letras_certas[pos] = letra
-                pos += 1
+            valida_chute(palavra, palpite, letras_certas)
         else: 
             erros += 1
             
@@ -34,11 +30,9 @@ def start():
         print(letras_certas)
         
     if acertou:
-        print("Você ganhou!")
+        vitoria()
     else:
-        print("Você perdeu!")
-        
-    print("Fim do jogo!")
+        derrota()
 
 def escolher_palavra():
     
@@ -61,6 +55,19 @@ def escolher_palavra():
 def letras_acertadas(palavra):
     lista = ["_" for letra in palavra]
     return lista
+
+def valida_chute(palavra, palpite, letras_certas):
+    pos = 0
+    for letra in palavra:
+        if(palpite == letra):
+            letras_certas[pos] = letra
+        pos += 1
+        
+def vitoria():
+    print("Você ganhou!")
+    
+def derrota():
+    print("Você perdeu!")
 
 if (__name__ == "__main__"):
     start()
