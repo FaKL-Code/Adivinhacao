@@ -5,26 +5,37 @@ print("-----------------------------")
 
 numero = randint(0, 100)
 
-valor_inserido = int(input("Digite o número: "))
+tentativas = 5
 
-acertou = valor_inserido == numero
+rodada = 1
 
-maior = valor_inserido > numero
-
-menor = valor_inserido < numero
-
-print("Você digitou: ", valor_inserido)
-
-if acertou:
-    print("Você acertou")
-else:
+while tentativas > 0:
     
-    if maior:
-        print("O número é menor que isso")
+    print("tentativa ", rodada, " de ", tentativas)
+
+    valor_inserido = int(input("Digite o número: "))
+
+    acertou = valor_inserido == numero
+
+    maior = valor_inserido > numero
+
+    menor = valor_inserido < numero
+
+    print("Você digitou: ", valor_inserido)
+
+    if acertou:
+        print("Você acertou")
+    else:
+
+        if maior:
+            print("O número é menor que isso")
+
+        elif menor:
+            print("O número é maior")
+            
+        rodada += 1
     
-    elif menor:
-        print("O número é maior")
-    
-    print("Você errou")
+    if rodada > tentativas:
+        break
     
 print("O número era: ", numero)
