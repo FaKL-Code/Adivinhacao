@@ -11,7 +11,7 @@ rodada = 1
 
 while tentativas > 0:
     
-    print("tentativa ", rodada, " de ", tentativas)
+    print("tentativa {} de {}".format(rodada, tentativas))
 
     valor_inserido = int(input("Digite o número: "))
 
