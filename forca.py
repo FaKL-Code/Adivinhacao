@@ -7,7 +7,7 @@ def start():
 
     palavra = "banana".upper()
     
-    letras_certas = ["_", "_", "_", "_", "_", "_"]
+    letras_certas = ["_" for letra in palavra]
     
     enforcou = False
     
