@@ -33,6 +33,7 @@ def start():
         vitoria()
     else:
         derrota()
+        print("A palavra era: ", palavra)
 
 def escolher_palavra():
     
@@ -44,9 +45,7 @@ def escolher_palavra():
         linha.strip
         palavras.append(linha)
         
-    palavra = str(palavras[randint(0, len(palavras) - 1)]).upper().strip()
-    
-    print(palavra)       
+    palavra = str(palavras[randint(0, len(palavras) - 1)]).upper().strip()     
     
     file.close()
     
