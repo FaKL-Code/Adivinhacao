@@ -1,11 +1,22 @@
 
+from random import randint
+
+
 def start():
 
     print("*********************************")
     print("******* Jogo da Forca! *******")
     print("*********************************")
 
-    palavra = "banana".upper()
+    file = open("palavras.txt", "r")
+    
+    palavras = []
+    
+    for linha in file:
+        linha.strip
+        palavras.append(linha)
+        
+    palavra = palavras[randint(0, len(palavras))]       
     
     letras_certas = ["_" for letra in palavra]
     
@@ -14,6 +25,8 @@ def start():
     acertou = False
     
     erros = 0
+            
+    file.close()
     
     print(letras_certas)
 
@@ -42,7 +55,6 @@ def start():
         print("Você ganhou!")
     else:
         print("Você perdeu!")
-        
         
     print("Fim do jogo!")
     
