@@ -1,9 +1,9 @@
 from random import randint
+import titulos
 
 def start():
-
-    print("Este é um jogo de adivinhação")
-    print("-----------------------------")
+    
+    titulos.titulo(1)
 
     numero = randint(0, 100)
 
