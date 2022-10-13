@@ -9,7 +9,7 @@ tentativas = 5
 
 rodada = 1
 
-while rodada < 6:
+for rodada in range (1, tentativas + 1):
     
     print("tentativa {} de {}".format(rodada, tentativas))
 
@@ -32,7 +32,5 @@ while rodada < 6:
 
         elif menor:
             print("O número é maior")
-            
-        rodada += 1
     
 print("O número era: ", numero)
