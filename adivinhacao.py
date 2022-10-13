@@ -13,7 +13,13 @@ for rodada in range (1, tentativas + 1):
     
     print("tentativa {} de {}".format(rodada, tentativas))
 
-    valor_inserido = int(input("Digite o número: "))
+    valor_inserido = int(input("Digite um número entre 1 e 100: "))
+    
+    print("Você digitou: ", valor_inserido)
+    
+    if valor_inserido < 1 or valor_inserido > 100:
+        print("Número invalido")
+        continue
 
     acertou = valor_inserido == numero
 
@@ -21,10 +27,10 @@ for rodada in range (1, tentativas + 1):
 
     menor = valor_inserido < numero
 
-    print("Você digitou: ", valor_inserido)
-
     if acertou:
         print("Você acertou")
+        break
+    
     else:
 
         if maior:
