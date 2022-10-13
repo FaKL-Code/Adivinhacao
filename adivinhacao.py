@@ -1,59 +1,64 @@
 from random import randint
 
-print("Este é um jogo de adivinhação")
-print("-----------------------------")
+def start():
 
-numero = randint(0, 100)
+    print("Este é um jogo de adivinhação")
+    print("-----------------------------")
 
-rodada = 1
+    numero = randint(0, 100)
 
-pontos = 1000
+    rodada = 1
 
-print("Qual o nível de dificuldade?")
-print("1- Fácil  2- Médio  3- Difícil")
+    pontos = 1000
 
-dificuldade = int(input(""))
+    print("Qual o nível de dificuldade?")
+    print("1- Fácil  2- Médio  3- Difícil")
 
-if dificuldade == 1:
-    tentativas = 10
-    
-elif dificuldade == 2:
-    tentativas = 7
-    
-elif dificuldade == 3:
-    tentativas = 5
+    dificuldade = int(input(""))
 
-for rodada in range (1, tentativas + 1):
-    
-    print("tentativa {} de {}".format(rodada, tentativas))
+    if dificuldade == 1:
+        tentativas = 10
+        
+    elif dificuldade == 2:
+        tentativas = 7
+        
+    elif dificuldade == 3:
+        tentativas = 5
 
-    valor_inserido = int(input("Digite um número entre 1 e 100: "))
-    
-    print("Você digitou: ", valor_inserido)
-    
-    if valor_inserido < 1 or valor_inserido > 100:
-        print("Número invalido")
-        continue
+    for rodada in range (1, tentativas + 1):
+        
+        print("tentativa {} de {}".format(rodada, tentativas))
 
-    acertou = valor_inserido == numero
+        valor_inserido = int(input("Digite um número entre 1 e 100: "))
+        
+        print("Você digitou: ", valor_inserido)
+        
+        if valor_inserido < 1 or valor_inserido > 100:
+            print("Número invalido")
+            continue
 
-    maior = valor_inserido > numero
+        acertou = valor_inserido == numero
 
-    menor = valor_inserido < numero
+        maior = valor_inserido > numero
 
-    if acertou:
-        print("Você acertou")
-        break
-    
-    else:
+        menor = valor_inserido < numero
 
-        if maior:
-            print("O número é menor que isso")
-            pontos = pontos - (valor_inserido - numero)
+        if acertou:
+            print("Você acertou")
+            break
+        
+        else:
 
-        elif menor:
-            print("O número é maior")
-            pontos = pontos - (numero - valor_inserido)
-    
-print("O número era: ", numero)
-print("Você pontuou: {} pontos".format(pontos))
+            if maior:
+                print("O número é menor que isso")
+                pontos = pontos - (valor_inserido - numero)
+
+            elif menor:
+                print("O número é maior")
+                pontos = pontos - (numero - valor_inserido)
+        
+    print("O número era: ", numero)
+    print("Você pontuou: {} pontos".format(pontos))
+
+if (__name__ == "__main__"):
+    start()
